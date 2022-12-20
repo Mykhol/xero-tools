@@ -5,8 +5,7 @@ const handler: NextApiHandler = async (
   req: NextApiRequest,
   res: NextApiResponse
 ) => {
-  const tokens = await xeroService.getAccessToken(req.url!);
-  console.log(tokens);
+  const tokens = await xeroService.isTokenExpired();
   return res.redirect("/");
 };
 
